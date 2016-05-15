@@ -1,0 +1,42 @@
+<RCC>
+    <qresource prefix="/">
+        <file>background2.png</file>
+        <file>background.png</file>
+        <file>number_0.png</file>
+        <file>number_1.png</file>
+        <file>number_2.png</file>
+        <file>number_3.png</file>
+        <file>number_4.png</file>
+        <file>number_5.png</file>
+        <file>number_6.png</file>
+        <file>number_7.png</file>
+        <file>number_8.png</file>
+        <file>number_9.png</file>
+        <file>go.png</file>
+        <file>bglayer.png</file>
+        <file>target.png</file>
+        <file>drum_blue_big.png</file>
+        <file>drum_blue_small.png</file>
+        <file>drum_red_big.png</file>
+        <file>drum_red_small.png</file>
+        <file>mtaikoflash_blue_left.png</file>
+        <file>mtaikoflash_blue_right.png</file>
+        <file>mtaikoflash_red_left.png</file>
+        <file>mtaikoflash_red_right.png</file>
+        <file>mtaiko.png</file>
+        <file>explosion_good.png</file>
+        <file>explosion_ok.png</file>
+        <file>judgement_good.png</file>
+        <file>judgement_notok.png</file>
+        <file>judgement_ok.png</file>
+        <file>playerchar_1.png</file>
+        <file>playerchar_2.png</file>
+        <file>playerchar_3.png</file>
+        <file>playerchar_4.png</file>
+        <file>playerchar_5.png</file>
+        <file>playerchar_6.png</file>
+        <file>playerchar_0.png</file>
+        <file>speed_up.png</file>
+        <file>comboballoon.png</file>
+    </qresource>
+</RCC>
