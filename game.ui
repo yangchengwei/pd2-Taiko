@@ -362,11 +362,18 @@
   <widget class="QPushButton" name="Auto">
    <property name="geometry">
     <rect>
-     <x>462</x>
+     <x>450</x>
      <y>350</y>
-     <width>41</width>
+     <width>51</width>
      <height>28</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier New</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Auto</string>
@@ -375,11 +382,18 @@
   <widget class="QPushButton" name="restart">
    <property name="geometry">
     <rect>
-     <x>410</x>
+     <x>365</x>
      <y>350</y>
-     <width>50</width>
+     <width>81</width>
      <height>28</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier New</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Restart</string>
@@ -466,6 +480,26 @@
     </font>
    </property>
   </widget>
+  <widget class="QPushButton" name="exit">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>350</y>
+     <width>51</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier New</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </widget>
   <zorder>background</zorder>
   <zorder>countDown</zorder>
   <zorder>bglayer</zorder>
@@ -497,6 +531,7 @@
   <zorder>time</zorder>
   <zorder>mtaiko_right</zorder>
   <zorder>mtaiko_left</zorder>
+  <zorder>exit</zorder>
  </widget>
  <resources>
   <include location="picture/picture.qrc"/>

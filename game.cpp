@@ -89,6 +89,7 @@ void Game::startGame()
     player = 0;
     gameTime = 30000;
     recentDrum = NULL;
+    autoPress = false;
     timer->start();
 }
 
@@ -219,6 +220,13 @@ void Game::mainGame(){
     }
 
     //===== speed =====
+    if (combo == 0){
+        speed = 2;
+        speed_up_count = 0;
+        for (i=0 ; i<4 ; i++){
+            speed_stage[i] = true;
+        }
+    }
     if (speed_up_count > 0){
         if (speed_up_count == 2000){
             speed += 1;
@@ -228,14 +236,7 @@ void Game::mainGame(){
     }
     else {
         ui->speed_up->hide();
-        if (combo == 0){
-            speed = 2;
-            speed_up_count = 0;
-            for (i=0 ; i<4 ; i++){
-                speed_stage[i] = true;
-            }
-        }
-        else if (combo == 10 && speed_stage[0]){
+        if (combo == 10 && speed_stage[0]){
             speed_up_count = 2000;
             speed_stage[0] = false;
         }
@@ -435,7 +436,14 @@ void Game::keyReleaseEvent(QKeyEvent *event){
 
 void Game::on_Auto_clicked()
 {
-    connect(timer, SIGNAL(timeout()), this, SLOT(auto_play()));
+    if (!autoPress){
+        autoPress = true;
+        connect(timer, SIGNAL(timeout()), this, SLOT(auto_play()));
+    }
+    else{
+        autoPress = false;
+        disconnect(timer, SIGNAL(timeout()), this, SLOT(auto_play()));
+    }
 }
 
 void Game::auto_play()
@@ -472,4 +480,10 @@ void Game::auto_play()
 void Game::on_restart_clicked()
 {
     startGame();
+}
+
+void Game::on_exit_clicked()
+{
+    timer->stop();
+    this->close();
 }

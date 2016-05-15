@@ -81,8 +81,7 @@ void Game2::startGame()
 
     connect(timer, SIGNAL(timeout()), this, SLOT(countDown()));
     timer->setInterval(10);
-    x = 180;
-    y = 125;
+    ui->countDown->move(180, 125);
     score = 0;
     speed = 2;
     speed_up_count = 0;
@@ -96,6 +95,9 @@ void Game2::startGame()
 
 void Game2::countDown()
 {
+    int x = ui->countDown->x();
+    int y = ui->countDown->y();
+
     if (countPath == ":/go.png"){
         disconnect(timer, SIGNAL(timeout()), this, SLOT(countDown()));
         setGame();
@@ -103,7 +105,7 @@ void Game2::countDown()
     }
 
     if (x < 280){
-        ui->countDown->move(x, y);
+        ui->countDown->move(x+1, y);
     }
     else{
         x = 180;
@@ -223,35 +225,35 @@ void Game2::mainGame(){
     }
 
     //===== speed =====
+    if (combo == 0){
+        speed = 2;
+        speed_up_count = 0;
+        for (i=0 ; i<4 ; i++){
+            speed_stage[i] = true;
+        }
+    }
     if (speed_up_count > 0){
         if (speed_up_count == 2000){
             speed += 1;
         }
-        speed_up_count -= 10;
+        speed_up_count -= 20;
         ui->speed_up->show();
     }
     else {
         ui->speed_up->hide();
-        if (combo == 0){
-            speed = 2;
-            speed_up_count = 0;
-            for (i=0 ; i<4 ; i++){
-                speed_stage[i] = true;
-            }
-        }
-        else if (combo == 10 && speed_stage[0]){
+        if (combo == 5 && speed_stage[0]){
             speed_up_count = 2000;
             speed_stage[0] = false;
         }
-        else if (combo == 30 && speed_stage[1]){
+        else if (combo == 10 && speed_stage[1]){
             speed_up_count = 2000;
             speed_stage[1] = false;
         }
-        else if (combo == 60 && speed_stage[2]){
+        else if (combo == 20 && speed_stage[2]){
             speed_up_count = 2000;
             speed_stage[2] = false;
         }
-        else if (combo == 100 && speed_stage[3]){
+        else if (combo == 40 && speed_stage[3]){
             speed_up_count = 2000;
             speed_stage[3] = false;
         }
@@ -497,3 +499,9 @@ void Game2::setTarget(int a, int b){
     ui->judgement->move(a+5, b-30);
 }
 
+
+void Game2::on_exit_clicked()
+{
+    timer->stop();
+    this->close();
+}

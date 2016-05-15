@@ -31,6 +31,7 @@ private:
     int speed;
     int speed_up_count;
     bool speed_stage[4];
+    bool autoPress;
     int gameTime;
     int combo;
     int max_combo;
@@ -46,7 +47,7 @@ private slots:
     void auto_play();
     void on_Auto_clicked();
     void on_restart_clicked();
-
+    void on_exit_clicked();
 };
 
 #endif // GAME_H

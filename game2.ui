@@ -361,9 +361,17 @@
     <rect>
      <x>410</x>
      <y>350</y>
-     <width>50</width>
+     <width>91</width>
      <height>28</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier New</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Restart</string>
@@ -447,6 +455,27 @@
     <string/>
    </property>
   </widget>
+  <widget class="QPushButton" name="exit">
+   <property name="geometry">
+    <rect>
+     <x>355</x>
+     <y>350</y>
+     <width>51</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier New</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </widget>
   <zorder>background</zorder>
   <zorder>speed_up</zorder>
   <zorder>countDown</zorder>
@@ -477,6 +506,7 @@
   <zorder>drum_2</zorder>
   <zorder>drum_4</zorder>
   <zorder>drum_0</zorder>
+  <zorder>exit</zorder>
  </widget>
  <resources>
   <include location="picture/picture.qrc"/>

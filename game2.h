@@ -45,7 +45,7 @@ private slots:
     void mainGame();
     void setTarget(int, int);
     void on_restart_clicked();
-
+    void on_exit_clicked();
 };
 
 #endif // GAME2_H
